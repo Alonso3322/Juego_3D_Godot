@@ -1,0 +1,27 @@
+[gd_scene load_steps=4 format=3 uid="uid://dtysqfwek6eef"]
+
+[ext_resource type="Script" path="res://steve.gd" id="1_m8rw5"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_kidj3"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_txo7u"]
+
+[node name="Steve" type="CharacterBody3D"]
+script = ExtResource("1_m8rw5")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("BoxMesh_kidj3")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("BoxShape3D_txo7u")
+
+[node name="Camera_Controller" type="Node3D" parent="."]
+top_level = true
+
+[node name="Camera_Target" type="Node3D" parent="Camera_Controller"]
+transform = Transform3D(1, 0, 0, 0, 0.942572, 0.334004, 0, -0.334004, 0.942572, 0, 2.33106, 4.702)
+
+[node name="Camera3D" type="Camera3D" parent="Camera_Controller/Camera_Target"]
+transform = Transform3D(1, 0, 0, 0, 0.999878, 0.0156201, 0, -0.0156201, 0.999878, 0, -0.0396758, -0.408609)
+current = true
+fov = 58.531
